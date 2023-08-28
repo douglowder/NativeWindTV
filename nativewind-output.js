@@ -4,7 +4,7 @@ const {
 } = require("nativewind");
 _NativeWindStyleSheet.create({
   styles: {
-    "ribbon": {
+    "ribbontransform": {
       "transform": [{
         "translateY": -20
       }, {
@@ -12,9 +12,22 @@ _NativeWindStyleSheet.create({
       }, {
         "rotate": "45deg"
       }]
+    },
+    "ribbon": {
+      "backgroundColor": "rgb(200, 0, 0)",
+      "height": 30,
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "ribbonstyle": {
+      "backgroundColor": "rgb(200, 0, 0)",
+      "height": 30,
+      "justifyContent": "center",
+      "alignItems": "center"
     }
   },
   transforms: {
-    "ribbon": true
+    "ribbontransform": true,
+    "ribbonstyle": true
   }
 });
