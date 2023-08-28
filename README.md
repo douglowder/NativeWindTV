@@ -22,10 +22,12 @@ yarn tvos
 yarn android
 ```
 
-The UI is derived from [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes custom CSS (`ribbon.css`). If you make changes to the CSS, you must execute
+The UI is derived from [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes custom CSS (`ribbon.css`). The `yarn start` script has been modified to automatically run the command below to convert the custom CSS into a React Native stylesheet (requires that the NPM package `concurrently` is installed):
 
 ```sh
-npx tailwindcss -i input.css --postcss postcss.config.js
+npx tailwindcss -i ribbon.css --postcss postcss.config.js
 ```
 
-to regenerate the `nativewind-output.js` file with the StyleSheets used by the app.  See the [NativeWind CLI doc](https://www.nativewind.dev/guides/cli-native) for more information on this. 
+See the [NativeWind CLI doc](https://www.nativewind.dev/guides/cli-native) for more information on this.
+
+In `App.tsx`, note that the button style includes `focus:bg-blue-300`. On TV, the `focus` prefix causes the style to be applied to controls when `onFocus()` is invoked, and the style is removed when `onBlur()` is invoked.
