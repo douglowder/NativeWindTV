@@ -2,7 +2,7 @@
 const nativewind = require('nativewind/tailwind/native');
 
 module.exports = {
-  content: ['./App.{js,jsx,ts,tsx}', './nativewind-output.js'],
+  content: ['./App.{js,jsx,ts,tsx}'],
   theme: {
     extend: {},
   },

@@ -6,7 +6,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "start": "expo start",
+    "start": "concurrently \"tailwindcss -i ribbon.css --postcss postcss.config.js --watch\" \"expo start\"",
     "tvos": "expo run:ios --scheme NativeWindTV-tvOS --device \"Apple TV\"",
     "lint": "eslint .",
     "test": "jest"
