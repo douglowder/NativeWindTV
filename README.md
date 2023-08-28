@@ -1,5 +1,7 @@
 # NativeWindTV
 
+Demo app using [NativeWind](https://nativewind.dev) for styling.
+
 Created with these steps:
 
 ```sh
@@ -20,4 +22,10 @@ yarn tvos
 yarn android
 ```
 
-The app is a modified version of the new app screen, with an added test button that has a blue background when focused on TV.
+The UI is derived from [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes custom CSS (`ribbon.css`). If you make changes to the CSS, you must execute
+
+```sh
+npx tailwindcss -i input.css --postcss postcss.config.js
+```
+
+to regenerate the `nativewind-output.js` file with the StyleSheets used by the app.  See the [NativeWind CLI doc](https://www.nativewind.dev/guides/cli-native) for more information on this. 
