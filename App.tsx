@@ -21,8 +21,8 @@ const App: () => React.JSX.Element = () => {
 
   const backgroundStyle = 'bg-neutral-300 dark:bg-slate-900 flex-1';
 
-  const buttonStyleAndroid = `relative m-1.5 bg-blue-500 w-[800px] h-[125px] text-white p-6 font-bold overflow-hidden focus:bg-blue-300`;
-  const buttonStyleTVOS = `relative m-3 bg-blue-500 w-[1600px] h-[250px] text-white p-12 font-bold overflow-hidden focus:bg-blue-300`;
+  const buttonStyleAndroid = `relative m-1.5 bg-blue-500 w-[800px] h-[125px] text-white p-6 font-bold overflow-hidden focus:bg-blue-300 active:bg-green-600`;
+  const buttonStyleTVOS = `relative m-3 bg-blue-500 w-[1600px] h-[250px] text-white p-12 font-bold overflow-hidden focus:bg-blue-300 active:bg-green-600`;
   const buttonStyle =
     Platform.OS === 'ios' ? buttonStyleTVOS : buttonStyleAndroid;
 
