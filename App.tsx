@@ -1,13 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
 import {
+  Platform,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -16,9 +8,9 @@ import {
   Pressable,
   View,
 } from 'react-native';
+import { styled } from 'nativewind';
 
 import './nativewind-output';
-import {styled} from 'nativewind';
 
 const StyledPressable = styled(Pressable);
 const StyledText = styled(Text);
@@ -28,36 +20,62 @@ const App: () => React.JSX.Element = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = 'bg-neutral-300 dark:bg-slate-900 flex-1';
+
+  const buttonStyleAndroid = `relative m-1.5 bg-blue-500 w-[800px] h-[125px] text-white p-6 font-bold overflow-hidden focus:bg-blue-300`;
+  const buttonStyleTVOS = `relative m-3 bg-blue-500 w-[1600px] h-[250px] text-white p-12 font-bold overflow-hidden focus:bg-blue-300`;
   const buttonStyle =
-    'relative m-1.5 bg-blue-500 w-[500px] text-white text-xl p-6 text-2xl font-bold overflow-hidden focus:bg-blue-300';
-  const buttonTextStyle = 'text-white text-xl';
-  const ribbonStyle = 'ribbonstyle ribbontransform';
-  const ribbonTextStyle = 'text-white text-base';
+    Platform.OS === 'ios' ? buttonStyleTVOS : buttonStyleAndroid;
+
+  const buttonTextStyleTVOS = 'text-white text-5xl';
+  const buttonTextStyleAndroid = 'text-white text-xl';
+  const buttonTextStyle =
+    Platform.OS === 'ios' ? buttonTextStyleTVOS : buttonTextStyleAndroid;
+
+  const ribbonStyleTVOS = 'ribbonstyletvos ribbontransformtvos';
+  const ribbonStyleAndroid = 'ribbonstyleandroid ribbontransformandroid';
+  const ribbonStyle =
+    Platform.OS === 'ios' ? ribbonStyleTVOS : ribbonStyleAndroid;
+
+  const ribbonTextStyleTVOS = 'text-white text-base text-4xl';
+  const ribbonTextStyleAndroid = 'text-white text-base text-l';
+  const ribbonTextStyle =
+    Platform.OS === 'ios' ? ribbonTextStyleTVOS : ribbonTextStyleAndroid;
 
   return (
     <SafeAreaView className={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        contentContainerStyle={{justifyContent: 'center', alignItems: 'center'}}
-        className={backgroundStyle}>
+        contentContainerStyle={{
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        className={backgroundStyle}
+      >
         <StyledView>
           <StyledPressable
             onPress={() => console.log('onPress')}
-            className={buttonStyle}>
-            <StyledText className={buttonTextStyle}>Example button</StyledText>
+            className={buttonStyle}
+          >
+            <StyledText className={buttonTextStyle}>
+              Example button 1
+            </StyledText>
             <StyledView className={ribbonStyle}>
               <StyledText className={ribbonTextStyle}>premium</StyledText>
             </StyledView>
           </StyledPressable>
           <StyledPressable className={buttonStyle}>
-            <StyledText className={buttonTextStyle}>Example button</StyledText>
+            <StyledText className={buttonTextStyle}>
+              Example button 2
+            </StyledText>
             <StyledView className={ribbonStyle}>
               <StyledText className={ribbonTextStyle}>on sale</StyledText>
             </StyledView>
           </StyledPressable>
           <StyledPressable className={buttonStyle}>
-            <StyledText className={buttonTextStyle}>Example button</StyledText>
+            <StyledText className={buttonTextStyle}>
+              Example button 3
+            </StyledText>
             <StyledView className={ribbonStyle}>
               <StyledText className={ribbonTextStyle}>ABC</StyledText>
             </StyledView>
