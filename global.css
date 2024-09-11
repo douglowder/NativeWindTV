@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .ribbontransformtvos {
     transform: rotate(45deg) translate(400px, 0px);
 }
