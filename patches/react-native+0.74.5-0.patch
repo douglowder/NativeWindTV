@@ -1,0 +1,23 @@
+diff --git a/node_modules/react-native/Libraries/Components/Pressable/Pressable.js b/node_modules/react-native/Libraries/Components/Pressable/Pressable.js
+index bccccfa..792ceff 100644
+--- a/node_modules/react-native/Libraries/Components/Pressable/Pressable.js
++++ b/node_modules/react-native/Libraries/Components/Pressable/Pressable.js
+@@ -395,12 +395,17 @@ function Pressable(props: Props, forwardedRef): React.Node {
+       // $FlowFixMe[prop-missing]
+       if (evt.eventType === 'select') {
+         // $FlowFixMe[incompatible-exact]
++        onPressIn(evt);
+         onPress && onPress(evt);
++        setTimeout(() => {
++          onPressOut(evt)
++        }, unstable_pressDelay ?? 100);
+       }
+       // $FlowFixMe[prop-missing]
+       if (evt.eventType === 'longSelect') {
+         // $FlowFixMe[incompatible-exact]
+-        onLongPress && onLongPress(evt);
++        evt.eventKeyAction === 0 ? onPressIn(evt) : onPressOut(evt);
++        // onLongPress && onLongPress(evt);
+       }
+     },
+     [focused, onBlur, onFocus, onLongPress, onPress, focusable, isTVSelectable, shouldUpdatePressed],
