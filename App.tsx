@@ -31,8 +31,8 @@ const App: () => React.JSX.Element = () => {
   const ribbonStyle =
     Platform.OS === 'ios' ? ribbonStyleTVOS : ribbonStyleAndroid;
 
-  const ribbonTextStyleTVOS = 'text-white text-base text-4xl';
-  const ribbonTextStyleAndroid = 'text-white text-base text-l';
+  const ribbonTextStyleTVOS = 'text-white text-3xl';
+  const ribbonTextStyleAndroid = 'text-white text-m';
   const ribbonTextStyle =
     Platform.OS === 'ios' ? ribbonTextStyleTVOS : ribbonTextStyleAndroid;
 
@@ -50,23 +50,42 @@ const App: () => React.JSX.Element = () => {
         <View>
           <Pressable
             onPress={() => console.log('onPress')}
+            onLongPress={() => console.log('onLongPress')}
+            className={buttonStyle}
+            unstable_pressDelay={1000}
+          >
+            <Text className={buttonTextStyle}>
+              Button with unstable_pressDelay=1000
+            </Text>
+            <View className={ribbonStyle}>
+              <Text className={ribbonTextStyle}>Press lasts 1 second</Text>
+            </View>
+          </Pressable>
+          <Pressable
+            onPress={() => console.log('onPress')}
+            onLongPress={() => console.log('onLongPress')}
+            tvParallaxProperties={{
+              pressMagnification: 1.1,
+            }}
             className={buttonStyle}
           >
-            <Text className={buttonTextStyle}>Example button 1</Text>
+            <Text className={buttonTextStyle}>
+              Button with tvOS pressMagnification
+            </Text>
             <View className={ribbonStyle}>
-              <Text className={ribbonTextStyle}>premium</Text>
+              <Text className={ribbonTextStyle}>
+                Magnifies before color change
+              </Text>
             </View>
           </Pressable>
-          <Pressable className={buttonStyle}>
-            <Text className={buttonTextStyle}>Example button 2</Text>
+          <Pressable
+            onPress={() => console.log('onPress')}
+            onLongPress={() => console.log('onLongPress')}
+            className={buttonStyle}
+          >
+            <Text className={buttonTextStyle}>Another button</Text>
             <View className={ribbonStyle}>
-              <Text className={ribbonTextStyle}>on sale</Text>
-            </View>
-          </Pressable>
-          <Pressable className={buttonStyle}>
-            <Text className={buttonTextStyle}>Example button 3</Text>
-            <View className={ribbonStyle}>
-              <Text className={ribbonTextStyle}>ABC</Text>
+              <Text className={ribbonTextStyle}>ABCDEFG</Text>
             </View>
           </Pressable>
         </View>
