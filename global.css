@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .ribbontransformtvos {
-    transform: rotate(45deg) translate(400px, 0px);
+    transform: rotate(45deg) translate(300px, -300px);
 }
 
 .ribbontransformandroid {
-    transform: rotate(45deg) translate(200px, 0px);
+    transform: rotate(45deg) translate(150px, -150px);
 }
 
 .ribbonstyletvos {
