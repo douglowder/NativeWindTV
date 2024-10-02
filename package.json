@@ -43,6 +43,8 @@
     "web": "expo start --web",
     "android": "expo run:android",
     "ios": "expo run:ios",
+    "build:web": "expo export --web",
+    "deploy:web": "eas deploy --environment=development",
     "lint": "tailwindcss -i ribbon.css --postcss postcss.config.js; expo lint"
   }
 }
