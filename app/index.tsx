@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import './global.css';
+import '../global.css';
 
 const App: () => React.JSX.Element = () => {
   const isDarkMode = useColorScheme() === 'dark';
