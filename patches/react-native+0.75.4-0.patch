@@ -1,0 +1,58 @@
+diff --git a/node_modules/react-native/Libraries/Components/Pressable/Pressable.js b/node_modules/react-native/Libraries/Components/Pressable/Pressable.js
+index 4110569..9e1b882 100644
+--- a/node_modules/react-native/Libraries/Components/Pressable/Pressable.js
++++ b/node_modules/react-native/Libraries/Components/Pressable/Pressable.js
+@@ -14,6 +14,7 @@ import type {
+   MouseEvent,
+   PressEvent,
+ } from '../../Types/CoreEventTypes';
++import type {TVParallaxPropertiesType} from '../TV/TVViewPropTypes';
+ import type {
+   AccessibilityActionEvent,
+   AccessibilityActionInfo,
+@@ -26,10 +27,9 @@ import {PressabilityDebugView} from '../../Pressability/PressabilityDebug';
+ import usePressability from '../../Pressability/usePressability';
+ import {type RectOrSize} from '../../StyleSheet/Rect';
+ import useMergeRefs from '../../Utilities/useMergeRefs';
+-import View from '../View/View';
+-import type {TVParallaxPropertiesType} from '../TV/TVViewPropTypes';
+-import {tvFocusEventHandler} from '../TV/TVFocusEventHandler';
+ import tagForComponentOrHandle from '../TV/tagForComponentOrHandle';
++import {tvFocusEventHandler} from '../TV/TVFocusEventHandler';
++import View from '../View/View';
+ import useAndroidRippleForView, {
+   type RippleConfig,
+ } from './useAndroidRippleForView';
+@@ -408,12 +408,19 @@ function Pressable(
+       // $FlowFixMe[prop-missing]
+       if (evt.eventType === 'select') {
+         // $FlowFixMe[incompatible-exact]
++        onPressIn && onPressIn(evt);
+         onPress && onPress(evt);
++        setTimeout(() => {
++          onPressOut && onPressOut(evt);
++        }, unstable_pressDelay ?? 130); // DEFAULT_MIN_PRESS_DURATION
+       }
+       // $FlowFixMe[prop-missing]
+       if (evt.eventType === 'longSelect') {
+         // $FlowFixMe[incompatible-exact]
+         onLongPress && onLongPress(evt);
++        evt?.eventKeyAction === 0
++          ? onPressIn && onPressIn(evt)
++          : onPressOut && onPressOut(evt);
+       }
+     },
+     [
+@@ -421,9 +428,12 @@ function Pressable(
+       onFocus,
+       onLongPress,
+       onPress,
++      onPressIn,
++      onPressOut,
+       focusable,
+       isTVSelectable,
+       shouldUpdatePressed,
++      unstable_pressDelay,
+     ],
+   );
+ 
