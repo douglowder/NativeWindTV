@@ -25,6 +25,10 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "experiments": {
+      "tsconfigPaths": true,
+      "typedRoutes": true
+     },
     "android": {
       "package": "com.douglowderexpo.NativeWindTV"
     },

@@ -9,9 +9,9 @@ import {
   View,
 } from 'react-native';
 
-import '../global.css';
+import '../../global.css';
 
-const App: () => React.JSX.Element = () => {
+const TVDemo: () => React.JSX.Element = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = 'bg-neutral-300 dark:bg-slate-900 flex-1';
@@ -64,9 +64,6 @@ const App: () => React.JSX.Element = () => {
           <Pressable
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
-            tvParallaxProperties={{
-              pressMagnification: 1.1,
-            }}
             className={buttonStyle}
           >
             <Text className={buttonTextStyle}>
@@ -94,4 +91,4 @@ const App: () => React.JSX.Element = () => {
   );
 };
 
-export default App;
+export default TVDemo;
