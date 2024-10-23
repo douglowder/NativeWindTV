@@ -2,6 +2,7 @@
   "expo": {
     "name": "NativeWindTV",
     "slug": "NativeWindTV",
+    "scheme": "NativeWindTV",
     "plugins": [
       [
         "@react-native-tvos/config-tv",
@@ -18,7 +19,20 @@
           }
         }
       ],
-      "expo-router"
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.1",
+            "newArchEnabled": true
+          },
+          "android": {
+            "minSdkVersion": 25,
+            "newArchEnabled": true
+          }
+        }
+      ]
     ],
     "web": {
       "bundler": "metro",
@@ -28,7 +42,7 @@
     "experiments": {
       "tsconfigPaths": true,
       "typedRoutes": true
-     },
+    },
     "android": {
       "package": "com.douglowderexpo.NativeWindTV"
     },
