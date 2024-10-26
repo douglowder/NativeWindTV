@@ -52,13 +52,10 @@ const TVDemo: () => React.JSX.Element = () => {
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
             className={buttonStyle}
-            unstable_pressDelay={1000}
           >
-            <Text className={buttonTextStyle}>
-              Button with unstable_pressDelay=1000
-            </Text>
+            <Text className={buttonTextStyle}>Button</Text>
             <View className={ribbonStyle}>
-              <Text className={ribbonTextStyle}>Press lasts 1 second</Text>
+              <Text className={ribbonTextStyle}>Press me</Text>
             </View>
           </Pressable>
           <Pressable
