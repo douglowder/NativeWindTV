@@ -52,6 +52,6 @@
     "ios": "expo run:ios",
     "build:web": "expo export --platform web",
     "deploy:web": "eas deploy --environment=development",
-    "lint": "tailwindcss -i ribbon.css --postcss postcss.config.js; expo lint"
+    "lint": "expo lint"
   }
 }

@@ -7,6 +7,7 @@ import {
 } from "react-native";
 
 declare module "@react-native/virtualized-lists" {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   export interface VirtualizedListWithoutRenderItemProps<ItemT>
     extends ScrollViewProps {
     ListFooterComponentClassName?: string;
