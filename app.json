@@ -26,11 +26,11 @@
         {
           "ios": {
             "deploymentTarget": "15.1",
-            "newArchEnabled": true
+            "newArchEnabled": false
           },
           "android": {
             "minSdkVersion": 25,
-            "newArchEnabled": true
+            "newArchEnabled": false
           }
         }
       ]
