@@ -6242,10 +6242,10 @@ react-is@^18.0.0, react-is@^18.2.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.3.1.tgz#e83557dc12eae63a99e003a46388b1dcbb44db7e"
   integrity sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==
 
-react-native-bottom-tabs@^0.0.13:
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/react-native-bottom-tabs/-/react-native-bottom-tabs-0.0.13.tgz#734da5860412d5dd47ed93afed61223ec2f54197"
-  integrity sha512-1eWeJNVoZmXkQcsVYfylOat0uqGwYw6EOBt5C7BaDcvsUQFutumR/2HtMQzdL6f0VVgnXtUq5yjCn1cMCIfgbw==
+react-native-bottom-tabs@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-bottom-tabs/-/react-native-bottom-tabs-0.1.0.tgz#d5d207ddbf7116c225a14bd56ab08e3d5f55a0bf"
+  integrity sha512-5qXcCg9aH4Z729snBDP8yBChfJ11p69csQkSfFDTjuu/QuTIrIr2l398y+1b+VS2zem6AaaSmBVngdrE7IjbPg==
   dependencies:
     color "^4.2.3"
     sf-symbols-typescript "^2.0.0"
