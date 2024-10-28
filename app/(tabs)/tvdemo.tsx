@@ -61,10 +61,14 @@ const TVDemo: () => React.JSX.Element = () => {
           <Pressable
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
+            tvParallaxProperties={{
+              magnification: 1.05,
+              pressMagnification: 1.1,
+            }}
             className={buttonStyle}
           >
             <Text className={buttonTextStyle}>
-              Button with tvOS pressMagnification
+              Button with Apple TV focus and press magnification
             </Text>
             <View className={ribbonStyle}>
               <Text className={ribbonTextStyle}>
@@ -75,9 +79,12 @@ const TVDemo: () => React.JSX.Element = () => {
           <Pressable
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
+            tvParallaxProperties={{
+              enabled: false,
+            }}
             className={buttonStyle}
           >
-            <Text className={buttonTextStyle}>Another button</Text>
+            <Text className={buttonTextStyle}>Button with no parallax</Text>
             <View className={ribbonStyle}>
               <Text className={ribbonTextStyle}>ABCDEFG</Text>
             </View>
