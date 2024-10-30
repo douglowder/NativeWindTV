@@ -21,12 +21,13 @@
         }
       ],
       "expo-router",
+      "react-native-bottom-tabs",
       [
         "expo-build-properties",
         {
           "ios": {
             "deploymentTarget": "15.1",
-            "newArchEnabled": false
+            "newArchEnabled": true
           },
           "android": {
             "minSdkVersion": 25,
