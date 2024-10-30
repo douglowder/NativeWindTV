@@ -1,37 +1,41 @@
-import { Platform } from 'react-native';
+import React from 'react';
+import { Colors } from '@/constants/Colors';
+import { useColorScheme } from '@/hooks/useColorScheme';
 import { withLayoutContext } from 'expo-router';
 import { createNativeBottomTabNavigator } from 'react-native-bottom-tabs/react-navigation';
 
-const { Navigator } = createNativeBottomTabNavigator();
-
-export const Tabs = withLayoutContext<any, typeof Navigator, any, any>(
-  Navigator,
+export const Tabs = withLayoutContext(
+  createNativeBottomTabNavigator().Navigator,
 );
 
 export default function TabLayout() {
+  const colorScheme = useColorScheme();
+  const colors = Colors[colorScheme ?? 'light'];
   return (
-    <Tabs sidebarAdaptable>
+    <Tabs
+      tabBarActiveTintColor={colors.tabIconSelected}
+      tabBarInactiveTintColor={colors.tabIconDefault}
+      rippleColor={colors.tint}
+      labeled={true}
+      barTintColor={colors.background}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: () =>
-            Platform.OS === 'ios' ? { sfSymbol: 'house' } : null,
+          tabBarIcon: () => require('../../assets/images/react-logo.png'),
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
           title: 'Two',
-          tabBarIcon: () =>
-            Platform.OS === 'ios' ? { sfSymbol: 'alt' } : null,
         }}
       />
       <Tabs.Screen
         name="tvdemo"
         options={{
-          title: 'TV Demo',
-          tabBarIcon: () => (Platform.OS === 'ios' ? { sfSymbol: 'tv' } : null),
+          title: 'TV styling demo',
         }}
       />
     </Tabs>
