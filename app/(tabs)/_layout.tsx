@@ -3,6 +3,7 @@ import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { withLayoutContext } from 'expo-router';
 import { createNativeBottomTabNavigator } from 'react-native-bottom-tabs/react-navigation';
+import { Platform } from 'react-native';
 
 export const Tabs = withLayoutContext(
   createNativeBottomTabNavigator().Navigator,
@@ -23,19 +24,30 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          tabBarIcon: () => require('../../assets/images/react-logo.png'),
+          tabBarIcon: () =>
+            Platform.OS === 'android'
+              ? require('@/assets/bar_icons/home.png')
+              : null,
         }}
       />
       <Tabs.Screen
         name="two"
         options={{
           title: 'Two',
+          tabBarIcon: () =>
+            Platform.OS === 'android'
+              ? require('@/assets/bar_icons/code.png')
+              : null,
         }}
       />
       <Tabs.Screen
         name="tvdemo"
         options={{
           title: 'TV styling demo',
+          tabBarIcon: () =>
+            Platform.OS === 'android'
+              ? require('@/assets/bar_icons/tv.png')
+              : null,
         }}
       />
     </Tabs>
