@@ -53,7 +53,7 @@ const TVDemo: () => React.JSX.Element = () => {
             onLongPress={() => console.log('onLongPress')}
             className={buttonStyle}
           >
-            <Text className={buttonTextStyle}>Button</Text>
+            <Text className={buttonTextStyle}>Button 1</Text>
             <View className={ribbonStyle}>
               <Text className={ribbonTextStyle}>Press me</Text>
             </View>
@@ -67,13 +67,9 @@ const TVDemo: () => React.JSX.Element = () => {
             }}
             className={buttonStyle}
           >
-            <Text className={buttonTextStyle}>
-              Button with Apple TV focus and press magnification
-            </Text>
+            <Text className={buttonTextStyle}>Button 2</Text>
             <View className={ribbonStyle}>
-              <Text className={ribbonTextStyle}>
-                Magnifies before color change
-              </Text>
+              <Text className={ribbonTextStyle}>Cool ribbon style</Text>
             </View>
           </Pressable>
           <Pressable
@@ -84,7 +80,7 @@ const TVDemo: () => React.JSX.Element = () => {
             }}
             className={buttonStyle}
           >
-            <Text className={buttonTextStyle}>Button with no parallax</Text>
+            <Text className={buttonTextStyle}>Button 3</Text>
             <View className={ribbonStyle}>
               <Text className={ribbonTextStyle}>ABCDEFG</Text>
             </View>
