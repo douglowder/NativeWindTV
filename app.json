@@ -46,7 +46,10 @@
       "typedRoutes": true
     },
     "android": {
-      "package": "com.douglowderexpo.NativeWindTV"
+      "package": "com.douglowderexpo.NativeWindTV",
+      "splash": {
+        "image": "./assets/images/splash.png"
+      }
     },
     "ios": {
       "bundleIdentifier": "com.douglowderexpo.NativeWindTV"
