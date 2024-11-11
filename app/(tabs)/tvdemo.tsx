@@ -7,6 +7,7 @@ import {
   useColorScheme,
   Pressable,
   View,
+  TouchableHighlight,
 } from 'react-native';
 
 import '../../global.css';
@@ -51,6 +52,8 @@ const TVDemo: () => React.JSX.Element = () => {
           <Pressable
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
             className={buttonStyle}
           >
             <Text className={buttonTextStyle}>Button 1</Text>
@@ -61,6 +64,8 @@ const TVDemo: () => React.JSX.Element = () => {
           <Pressable
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
             tvParallaxProperties={{
               magnification: 1.05,
               pressMagnification: 1.1,
@@ -75,6 +80,8 @@ const TVDemo: () => React.JSX.Element = () => {
           <Pressable
             onPress={() => console.log('onPress')}
             onLongPress={() => console.log('onLongPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
             tvParallaxProperties={{
               enabled: false,
             }}
@@ -85,6 +92,20 @@ const TVDemo: () => React.JSX.Element = () => {
               <Text className={ribbonTextStyle}>ABCDEFG</Text>
             </View>
           </Pressable>
+          <TouchableHighlight
+            onPress={() => console.log('onPress')}
+            onLongPress={() => console.log('onLongPress')}
+            onPressIn={() => console.log('onPressIn')}
+            onPressOut={() => console.log('onPressOut')}
+            className={buttonStyle}
+          >
+            <View>
+              <Text className={buttonTextStyle}>TouchableHighlight</Text>
+              <View className={ribbonStyle}>
+                <Text className={ribbonTextStyle}>LMNOP</Text>
+              </View>
+            </View>
+          </TouchableHighlight>
         </View>
       </ScrollView>
     </SafeAreaView>
