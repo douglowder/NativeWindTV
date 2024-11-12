@@ -14,6 +14,7 @@ export default function TabLayout() {
   const colors = Colors[colorScheme ?? 'light'];
   return (
     <Tabs
+      transparent
       tabBarActiveTintColor={colors.tabIconSelected}
       tabBarInactiveTintColor={colors.tabIconDefault}
       rippleColor={colors.tint}
