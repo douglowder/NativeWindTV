@@ -13,11 +13,7 @@ import {
 
 import '../../global.css';
 
-const data: number[] = [];
-
-for (let i = 0; i < 100; i++) {
-  data.push(i);
-}
+const data: number[] = [...Array(10).keys()];
 
 const TVDemo: () => React.JSX.Element = () => {
   const isDarkMode = useColorScheme() === 'dark';
