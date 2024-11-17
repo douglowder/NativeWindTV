@@ -2,12 +2,14 @@
   "expo": {
     "name": "NativeWindTV",
     "slug": "NativeWindTV",
-    "scheme": "NativeWindTV",
+    "scheme": "nativewindtv",
+    "icon": "./assets/tv_icons/icon-760x760.png",
     "plugins": [
       [
         "@react-native-tvos/config-tv",
         {
           "androidTVBanner": "./assets/tv_icons/icon-400x240.png",
+          "androidTVIcon": "./assets/tv_icons/icon-760x760.png",
           "appleTVImages": {
             "icon": "./assets/tv_icons/icon-1280x768.png",
             "iconSmall": "./assets/tv_icons/icon-400x240.png",
@@ -25,13 +27,7 @@
         "expo-build-properties",
         {
           "ios": {
-            "useFrameworks": "static",
-            "deploymentTarget": "15.1",
-            "newArchEnabled": true
-          },
-          "android": {
-            "minSdkVersion": 25,
-            "newArchEnabled": true
+            "useFrameworks": "static"
           }
         }
       ],
@@ -47,12 +43,14 @@
       "typedRoutes": true
     },
     "android": {
+      "newArchEnabled": true,
       "package": "com.douglowderexpo.NativeWindTV",
       "splash": {
         "image": "./assets/images/splash.png"
       }
     },
     "ios": {
+      "newArchEnabled": true,
       "bundleIdentifier": "com.douglowderexpo.NativeWindTV"
     }
   }
