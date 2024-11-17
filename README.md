@@ -11,9 +11,10 @@ This project uses
 - `cd` into the project
 
 ```sh
+### Install dependencies
 yarn
-yarn prebuild # Executes Expo prebuild with TV modifications
-yarn start:nativewind # Starts a Nativewind compiler to recompile the CSS whenever it changes
+### Generate a TV project for Android TV and Apple TV
+yarn prebuild:tv
 ```
 
 In a separate window:
@@ -25,15 +26,13 @@ yarn android # Build and run for Android TV, requires a running Android TV emula
 
 ## 📝 Notes
 
-The UI is derived from [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes custom CSS (`ribbon.css`). The `yarn start:nativewind` script has been modified to automatically run the command below to convert the custom CSS into a React Native stylesheet:
+`yarn prebuild` does a clean prebuild and generates the usual Expo project for iOS and Android mobile devices.
 
-```sh
-npx tailwindcss -i ribbon.css --postcss postcss.config.js
-```
+The UI is derived from [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes custom CSS (`ribbon.css`).
 
 See the [NativeWind CLI doc](https://www.nativewind.dev/guides/cli-native) for more information on this.
 
-In `App.tsx`, note that the button style includes `focus:bg-blue-300`. On TV, the `focus` prefix causes the style to be applied to controls when `onFocus()` is invoked, and the style is removed when `onBlur()` is invoked.
+In `tvdemo.tsx`, note that the button style includes `focus:bg-blue-300` and `active:bg-green-600`. On TV, the `focus` prefix causes the style to be applied to controls when `onFocus()` is invoked, and the style is removed when `onBlur()` is invoked. On both TV and mobile, the `active` prefix applies the style when `onPressIn()` is invoked, and removes it when `onPressOut()` is invoked.
 
 ## Learn more
 
