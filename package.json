@@ -45,8 +45,8 @@
   },
   "scripts": {
     "postinstall": "patch-package",
-    "prebuild": "DEBUG=expo:* EXPO_TV=1 expo prebuild --clean",
-    "start:nativewind": "tailwindcss -i ribbon.css --postcss postcss.config.js --watch",
+    "prebuild": "DEBUG=expo:* expo prebuild --clean",
+    "prebuild:tv": "DEBUG=expo:* EXPO_TV=1 expo prebuild --clean",
     "start": "expo start",
     "web": "expo start --web",
     "android": "expo run:android",
