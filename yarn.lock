@@ -1489,10 +1489,10 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "1.0.0"
 
-"@react-native-tvos/config-tv@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@react-native-tvos/config-tv/-/config-tv-0.1.0.tgz#0a5409d5e67a9846ce4bad72261146217dfcdd2c"
-  integrity sha512-W12PonRGgN5FBru2X8maR6NAX+PO7FKiHSIb8kL3628uLsjV9P4wrUXEyr4GhCMECmSRJMHfm8mVX1Wr3sp9gg==
+"@react-native-tvos/config-tv@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@react-native-tvos/config-tv/-/config-tv-0.1.1.tgz#8b8cf204c7a40e458d70be59ee38ab4e32a210cb"
+  integrity sha512-Le/5wGElcNarDcoafCbvk/HMxcG3s0/468xXMWqAsOtBhGAdGtyXtjWEgp/uEr4GgZJlEIdM3ZqiuB8P7p8sjw==
   dependencies:
     getenv "^1.0.0"
 
@@ -6504,7 +6504,7 @@ react-native-safe-area-context@4.12.0:
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-4.12.0.tgz#17868522a55bbc6757418c94a1b4abdda6b045d9"
   integrity sha512-ukk5PxcF4p3yu6qMZcmeiZgowhb5AsKRnil54YFUUAXVIS7PJcMHGGC+q44fCiBg44/1AJk5njGMez1m9H0BVQ==
 
-react-native-screens@^4.0.0, react-native-screens@~4.1.0:
+react-native-screens@~4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-4.1.0.tgz#3f703a1bb4fd65fd7963e616ddc373a97809c254"
   integrity sha512-tCBwe7fRMpoi/nIgZxE86N8b2SH8d5PlfGaQO8lgqlXqIyvwqm3u1HJCaA0tsacPyzhW7vVtRfQyq9e1j0S2gA==
