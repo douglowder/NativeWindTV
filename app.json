@@ -3,13 +3,15 @@
     "name": "NativeWindTV",
     "slug": "NativeWindTV",
     "scheme": "nativewindtv",
+    "splash": {
+      "image": "./assets/images/splash.png"
+    },
     "icon": "./assets/tv_icons/icon-760x760.png",
     "plugins": [
       [
         "@react-native-tvos/config-tv",
         {
           "androidTVBanner": "./assets/tv_icons/icon-400x240.png",
-          "androidTVIcon": "./assets/tv_icons/icon-760x760.png",
           "appleTVImages": {
             "icon": "./assets/tv_icons/icon-1280x768.png",
             "iconSmall": "./assets/tv_icons/icon-400x240.png",
@@ -44,10 +46,7 @@
     },
     "android": {
       "newArchEnabled": true,
-      "package": "com.douglowderexpo.NativeWindTV",
-      "splash": {
-        "image": "./assets/images/splash.png"
-      }
+      "package": "com.douglowderexpo.NativeWindTV"
     },
     "ios": {
       "newArchEnabled": true,
