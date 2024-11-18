@@ -1,36 +1,39 @@
-# NativeWind Example (modified for TV)
+# NativeWindTV
 
-This project uses
+This is an [Expo Router](https://docs.expo.dev/router/introduction/) SDK 52 project demonstrating how Tailwind CSS styles can be used in a React Native app for TV.
 
-- the [React Native TV fork](https://github.com/react-native-tvos/react-native-tvos), which supports both phone (Android and iOS) and TV (Android TV and Apple TV) targets
-- the [React Native TV config plugin](https://github.com/react-native-tvos/config-tv/tree/main/packages/config-tv) to allow Expo prebuild to modify the project's native files for TV builds
-- the [NativeWind](https://www.nativewind.dev/) package which lets you use Tailwind CSS in react-native.
+Some of the packages used:
+
+- The [React Native TV fork](https://github.com/react-native-tvos/react-native-tvos), which supports both phone (Android and iOS) and TV (Android TV and Apple TV) targets
+- The [React Native TV config plugin](https://github.com/react-native-tvos/config-tv/tree/main/packages/config-tv), to allow Expo prebuild to modify the project's native files for TV builds
+- The [NativeWind](https://www.nativewind.dev/) package which lets you use Tailwind CSS in react-native.
+- The [react-native-bottom-tabs](https://github.com/okwasniewski/react-native-bottom-tabs) package that provides a fully native tab bar (top bar for Apple TV, bottom bar for Android TV).
 
 ## 🚀 How to use
 
 - `cd` into the project
 
+- TV builds:
+
 ```sh
-### Install dependencies
 yarn
-### Generate a TV project for Android TV and Apple TV
-yarn prebuild:tv
+yarn prebuild:tv # Executes Expo prebuild with TV modifications
+yarn ios # Build and run for Apple TV
+yarn android # Build and run for Android TV
 ```
 
-In a separate window:
+- Mobile builds:
 
 ```sh
-yarn ios # Build and run for Apple TV
-yarn android # Build and run for Android TV, requires a running Android TV emulator
+yarn
+yarn prebuild # Executes Expo prebuild without TV modifications
+yarn ios # Build and run for iOS
+yarn android # Build and run for Android mobile
 ```
 
 ## 📝 Notes
 
-`yarn prebuild` does a clean prebuild and generates the usual Expo project for iOS and Android mobile devices.
-
-The UI is derived from [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes custom CSS (`ribbon.css`).
-
-See the [NativeWind CLI doc](https://www.nativewind.dev/guides/cli-native) for more information on this.
+The UI is derived from the [NativeWind example app](https://github.com/nativewind/nativewind/tree/main/examples/expo-router) plus [this Tailwind CSS example](https://tailwindcomponents.com/component/premium-banner-around-button). It includes [custom CSS transforms](./global.css).
 
 In `tvdemo.tsx`, note that the button style includes `focus:bg-blue-300` and `active:bg-green-600`. On TV, the `focus` prefix causes the style to be applied to controls when `onFocus()` is invoked, and the style is removed when `onBlur()` is invoked. On both TV and mobile, the `active` prefix applies the style when `onPressIn()` is invoked, and removes it when `onPressOut()` is invoked.
 
